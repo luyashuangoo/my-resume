@@ -90,7 +90,7 @@ a.logo span {
   line-height: 22px;
   position: relative;
   margin-bottom: 30px;
-  text-size:
+  font-weight: bold; 
 }
 .Usercard .welcome .triangle {
   display: inline-block;
