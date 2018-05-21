@@ -71,6 +71,7 @@ a.logo span {
   margin-left: auto;
   margin-right: auto;
   background-color: white;
+  box-shadow: 1px 1px 9px 1px rgba(133,133,133,1);
 }
 .Usercard .picture{
   float: left;
@@ -141,10 +142,37 @@ a.logo span {
   vertical-align: top;
   display: inline-block;
   border-radius: 50%;
-  margin: 16px 16px;
+  margin: 25px 16px;
   width: 30px;
   height: 30px;
 }
 .Usercard .media a:hover{
   background-color: rgba(0, 0, 0, 0.1);
+}
+body main{
+  margin-top: -340px;
+}
+.downloadResume-wrapper{
+  text-align: center;
+  margin: 25px 0px 25px 0px;
+}
+.downloadResume-wrapper .downloadResume{
+  text-decoration: none;
+  border: 1px solid rgb(203, 205, 207);
+  color: #3d4451;
+  display: inline-block;
+  padding: 18px 50px;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition：box-shadow 1s;
+}
+.downloadResume-wrapper .downloadResume:hover{
+  box-shadow: 0.5px 2px 9px 2px rgba(194,194,194,0.73);
+}
+main .selfIntroduction{
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
