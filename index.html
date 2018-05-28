@@ -75,9 +75,9 @@
 							<dt>地址</dt>
 							<dd>成都市双流区中德英伦联邦</dd>
 							<dt>E-mail</dt>
-							<dd>luyashuang994828@gmail.com</dd>
+							<dd>luyashuang123456@gmail.com</dd>
 							<dt>联系电话</dt>
-							<dd>18782383673</dd>
+							<dd>18782381234</dd>
 						</dl>
 					</div>
 				</div>
@@ -107,37 +107,85 @@
 				<a class="downloadResume" href="#" target="_blank" download="my-resume.pdf">中文简历下载</a>
 			</p>
 			<p class="selfIntroduction">
-				Hello! I’m Robert Smith. Senior Web Developer specializing in front end development. Experienced with all stages of the development
-				cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng
-				background in project management and customer relations.
+					为什么说这是一个友尽游戏呢？因为玩家经常会死于不明爆炸和突然被打掉的地板，而这些很多都是官方用心险恶的设计，然后被玩家在一通乱打中触发。通常都是冲在前面的人触发了陷阱害死了后面的人。我叫鲁亚霜，来自绵阳，一个渴望技术不断进步的女孩。除了美，就是学。
 			</p>
 		</main>
-		<section>
+		<section class="skills clearfix">
 			<h2>技能</h2>
-			<ol>
-				<li>html &amp; css</li>
-				<li>Javascript</li>
-				<li>jQuery</li>
-				<li>Vue</li>
-				<li>React</li>
-				<li>Http</li>
+			<ol class="skillsList clearfix">
+				<li>
+					<h3>html &amp; css</h3>
+					<div class="progressBar">
+						<div class="progress" style="width:80%;"></div>
+					</div>
+				</li>
+				<li>
+					<h3>JavaScript</h3>
+					<div class="progressBar">
+						<div class="progress" style="width:60%;"></div>
+					</div>
+				</li>
+				<li>
+					<h3>jQuery</h3>
+					<div class="progressBar">
+						<div class="progress" style="width:50%;"></div>
+					</div>
+				</li>
+				<li>
+					<h3>vue.js</h3>
+					<div class="progressBar">
+						<div class="progress" style="width:65%;"></div>
+					</div>
+				</li>
+				<li>
+					<h3>react.js</h3>
+					<div class="progressBar">
+						<div class="progress" style="width:34%;"></div>
+					</div>
+				</li>
+				<li>
+					<h3>node.js</h3>
+					<div class="progressBar">
+						<div class="progress" style="width:23%;"></div>
+					</div>
+				</li>
 			</ol>
 		</section>
-		<section>
-			<H2>作品集</H2>
-			<nav>
-				<ol>
-					<li>所有</li>
-					<li>框架</li>
-					<li>原生JS</li>
+		<section class="portflio">
+			<h2>作品集</h2>
+			<nav class="portflioCate">
+				<ol class="clearfix">
+					<li id="portflio1">所有</li>
+					<li id="portflio2">框架</li>
+					<li id="portflio3">原生JS</li>
+					
 				</ol>
+				<div id="portflioBar" class="bar stutas-1">
+					<div class="bar-inner"></div>
+				</div>
 			</nav>
-			<div class="works">
-				<div class="big"></div>
-				<div class="small"></div>
-				<div class="small"></div>
+		<script>
+			portflio1.onclick=function(){
+				portflioBar.className="bar stutas-1"
+			}
+			portflio2.onclick=function(){
+				portflioBar.className="bar stutas-2"
+			}
+			portflio3.onclick=function(){
+				portflioBar.className="bar stutas-3"
+			}
+		</script>
+		<div class="works">
+			<div class="big">
+				<img src="./img/big.jpg" alt="works-1">
 			</div>
+			<div class="small" style="top:0px; left:644px">
+				<img src="./img/small1.jpg" alt="works-2">
+			</div>
+			<div class="small"style="top:298px;left:644px">
+				<img src="./img/small2.jpg" alt="works-3">
+			</div>
+		</div>
 		</section>
 	</body>
-
 	</html>

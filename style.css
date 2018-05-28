@@ -1,5 +1,5 @@
 body {
-  background-color: #efefef;
+  background-color: rgb(239,239,239);
   color: black;
 }
 .topNavBar {
@@ -175,4 +175,137 @@ main .selfIntroduction{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  font-family: tahoma, arial, "Hiragino Sans GB", 宋体, sans-serif;
+  line-height: 18px;
+  line-height: 36px;
+  font-size: 18px;
+
+}
+section.skills{
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+ 
+}
+section.skills > h2{
+  margin: 32px 0px;
+  color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-top: 70px;
+}
+section.skills > ol.skillsList{
+  list-style: none;
+  background: white;
+  box-shadow: 1px 1px 9px 1px rgba(133,133,133,1);
+  margin: 0px;
+  padding: 40px 50px 10px;
+
+
+}
+section.skills  ol  h3{
+  display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.2;
+    padding-right: 48px;
+    color: #9da0a7  ;
+}
+section.skills > ol > li{
+   list-style: none;
+   float: left;
+   width: 48%;
+  list-style: none;
+}
+section.skills > ol > li:nth-child(even){
+  float:right;
+}
+section.skills .progressBar{
+  height: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(250,225,225);
+  border-radius: 5px;
+  margin-top:5px;
+  margin-bottom: 40px;;
+}
+section.skills .progress{
+  height: 100%;
+  background-color: red;
+  width: 50%;
+  background-color: #e8676b;
+  border-radius: 5px;
+}
+section.portflio{
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 100px;
+}
+section.portflio > h2{
+  margin: 32px 0px;
+  color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-top: 70px；
+}
+section.portflio >nav{
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+}
+section.portflio >nav >ol{
+ list-style: none;
+  padding: 0px;
+  margin: 0px;  
+  display: inline-block;
+}
+section.portflio >nav >ol >li{
+  float: left;
+  margin-left: 40px;
+  cursor: pointer;
+}
+section.portflio >nav >ol >li:nth-child(1){
+  margin-left: 0px;
+}
+section.portflio nav .bar{
+  height: 5px;
+  background-color: white;
+  border-radius: 2px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+section.portflio nav .bar-inner{
+  height: 100%;
+  width: 20%;
+  background-color: #e8676b;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+section.portflio nav .bar.stutas-1 .bar-inner{
+  margin-left: 0px;
+  width: 35px;
+}
+section.portflio nav .bar.stutas-2 .bar-inner{
+  margin-left: 71px;
+  width: 38px;
+}
+section.portflio nav .bar.stutas-3 .bar-inner{
+  margin-left: 142px;
+  width: 52px;
+}
+.works {
+  height: 576px;
+  position: relative;
+}
+.works .big,
+.works .small{
+  position: absolute;
+}
+.works .big{
+
 }
