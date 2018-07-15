@@ -6,10 +6,30 @@
 		<link rel="stylesheet" href="./style.css">
 		<link rel="stylesheet" href="./loading.css">
 		<style type="text/css">
-			.icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
-			.site-welcome { display: none; position: fixed; top: 0; left: 0;
-				width: 100%; height: 100%; background: rgb(228, 228, 228); z-index: 1; justify-content: center; align-items: center; }
-			.site-welcome.active { display: flex; }
+			.icon {
+				width: 1em;
+				height: 1em;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+			}
+
+			.site-welcome {
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgb(228, 228, 228);
+				z-index: 1;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.site-welcome.active {
+				display: flex;
+			}
 		</style>
 		<script src="//at.alicdn.com/t/font_673796_7627lk6lgvwy7gb9.js"></script>
 	</head>
@@ -65,7 +85,7 @@
 			<div class="banner mask"></div>
 		</div>
 		<main>
-			<div id="userCard" class="userCard" >
+			<div id="userCard" class="userCard">
 				<div class="pictureAndText clearfix">
 					<div class="picture">
 						<img src="./img/avatar.png" width="299px" height="322px" alt="头像">
@@ -201,7 +221,7 @@
 		<script>
 			setTimeout(function () {
 				siteWelcome.classList.remove('active')
-			}, 3000)
+			}, 1000)
 			window.onscroll = function (xxx) {
 				if (window.scrollY > 0) {
 					topNavBar.classList.add('sticky')
@@ -209,8 +229,9 @@
 					topNavBar.classList.remove('sticky')
 				}
 			}
+			
 			let liTags = document.querySelectorAll('nav.menu > ul > li')
-			for (let i = 0; 1 < liTags.length; i++) {
+			for (let i = 0; i < liTags.length; i++) {
 				liTags[i].onmouseenter = function (x) {
 					x.currentTarget.classList.add('active')
 				}
@@ -220,15 +241,15 @@
 			}
 
 			let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+			console.log(aTags)
 			for (let i = 0; i < aTags.length; i++) {
 				aTags[i].onclick = function (x) {
 					x.preventDefault()
 					let a = x.currentTarget
-					let href = a.getAttribute('href') //'#siteWorks'
+					let href = a.getAttribute('href') //'#siteAbout'
 					let element = document.querySelector(href)
 					let top = element.offsetTop
-					window.scrollTo(0,top - 80)
-
+					window.scrollTo(0, top)
 				}
 			}
 		</script>

@@ -7,19 +7,36 @@ body { background-color: rgb(239,239,239); color: black; }
 .topNavBar nav ul li { float: right; color: inherit; margin-left: 11px; margin-right: 11px;position: relative;cursor: pointer; }
 .topNavBar nav ul li a { color: inherit; font-weight: bold; font-size: 18 px; border-bottom: 3px solid transparent;
   padding-top: 6px; padding-bottom: 6px; display: block; }
-.topNavBar > nav > ul > li.active > a::after{ content:''; display: block; position: absolute; top:100%; left:0; width:100%; 
-  height: 20px; background-color: #e8676b; animation: a .3s;}
-@keyframes a{
-  0%{ width:0; }
-  100%{ width:100%; }
+.topNavBar nav > ul > li.active > a::after { 
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #e06567;
+  height: 3px;
+  animation: menuSlide .3s;
 }
-.topNavBar li .submenu{ display: none; position: absolute; right:0; top:100%; white-space: nowrap;
-  background: white; color: #3d4451; padding: 10px 5px; box-shadow: 0px 0px 5px 0.5px rgba(194,194,194,0.73); }
-.topNavBar li.active > .submenu{ display: block; animation: menu .3s;}
-@keyframes menu{
-  0%{margin-right:100%}
-  100%{margin-right:0%}
+@keyframes menuSlide{
+  0%{ width: 0; }
+  100%{ width: 100%; }
 }
+.topNavBar .submenu{
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 109%;
+  background: white;
+  color: #3d4451;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.topNavBar li.active> .submenu{ display: block; animation: submenuSlide .3s; }
+@keyframes submenuSlide{
+  0%{ margin-right: 100%; }
+  100%{ margin-right: 0%; }
+}
+.topNavBar .submenu > li{ white-space: nowrap; padding: 10px 5px; }
 /*{ border-bottom: 3px solid rgb(232, 103, 107); }*/
 .clearfix::after { content: ""; display: block; clear: both; }
 .banner { height: 515px; background-position: center center; background-size: cover; }
