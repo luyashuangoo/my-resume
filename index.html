@@ -6,30 +6,15 @@
 		<link rel="stylesheet" href="./style.css">
 		<link rel="stylesheet" href="./loading.css">
 		<style type="text/css">
-			.icon {
-				width: 1em;
-				height: 1em;
-				vertical-align: -0.15em;
-				fill: currentColor;
-				overflow: hidden;
-			}
-			.site-welcome{
-				display: none;
-				position: fixed;
-				top: 0; left: 0; width: 100%; height: 100%;
-				background: rgb(228, 228, 228);
-				z-index: 1;
-				justify-content: center;
-				align-items: center;
-			}
-			.site-welcome.active{
-				display: flex;
-			}
+			.icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
+			.site-welcome { display: none; position: fixed; top: 0; left: 0;
+				width: 100%; height: 100%; background: rgb(228, 228, 228); z-index: 1; justify-content: center; align-items: center; }
+			.site-welcome.active { display: flex; }
 		</style>
 		<script src="//at.alicdn.com/t/font_673796_7627lk6lgvwy7gb9.js"></script>
 	</head>
 
-	<bodi>
+	<body>
 		<div id="siteWelcome" class="site-welcome active">
 			<div class="loading"></div>
 		</div>
@@ -39,7 +24,7 @@
 					<span class="rs">RS</span>
 					<span class="card">card</span>
 				</a>
-				<nav class="nav">
+				<nav class="nav menu">
 					<ul>
 						<li class="nav1">
 							<a href="">其他</a>
@@ -51,7 +36,7 @@
 							<a href="">经历</a>
 						</li>
 						<li class="nav4">
-							<a class="menuTrigger" href="">作品</a>
+							<a href="#sitaWorks">作品</a>
 							<ul class="submenu">
 								<li>作品1</li>
 								<li>作品2</li>
@@ -59,7 +44,7 @@
 							</ul>
 						</li>
 						<li class="nav5">
-							<a class="menuTrigger"href="">博客</a>
+							<a href="">博客</a>
 							<ul class="submenu">
 								<li>博客1</li>
 								<li>博客2</li>
@@ -67,10 +52,10 @@
 							</ul>
 						</li>
 						<li class="nav6">
-							<a href="">技能</a>
+							<a href="#siteSkills">技能</a>
 						</li>
 						<li class="nav7">
-							<a href="">简介</a>
+							<a href="#userCard">简介</a>
 						</li>
 					</ul>
 				</nav>
@@ -80,7 +65,7 @@
 			<div class="banner mask"></div>
 		</div>
 		<main>
-			<div class="Usercard">
+			<div id="userCard" class="userCard" >
 				<div class="pictureAndText clearfix">
 					<div class="picture">
 						<img src="./img/avatar.png" width="299px" height="322px" alt="头像">
@@ -133,10 +118,10 @@
 				<a class="downloadResume" href="#" target="_blank" download="my-resume.pdf">中文简历下载</a>
 			</p>
 			<p class="selfIntroduction">
-					为什么说这是一个友尽游戏呢？因为玩家经常会死于不明爆炸和突然被打掉的地板，而这些很多都是官方用心险恶的设计，然后被玩家在一通乱打中触发。通常都是冲在前面的人触发了陷阱害死了后面的人。我叫鲁亚霜，来自绵阳，一个渴望技术不断进步的女孩。除了美，就是学。
+				为什么说这是一个友尽游戏呢？因为玩家经常会死于不明爆炸和突然被打掉的地板，而这些很多都是官方用心险恶的设计，然后被玩家在一通乱打中触发。通常都是冲在前面的人触发了陷阱害死了后面的人。我叫鲁亚霜，来自绵阳，一个渴望技术不断进步的女孩。除了美，就是学。
 			</p>
 		</main>
-		<section class="skills clearfix">
+		<section id="siteSkills" class="skills clearfix">
 			<h2>技能</h2>
 			<ol class="skillsList clearfix">
 				<li>
@@ -177,67 +162,76 @@
 				</li>
 			</ol>
 		</section>
-		<section class="portflio">
+		<section id="siteWorks" class="portflio">
 			<h2>作品集</h2>
 			<nav class="portflioCate">
 				<ol class="clearfix">
 					<li id="portflio1">所有</li>
 					<li id="portflio2">框架</li>
 					<li id="portflio3">原生JS</li>
-					
+
 				</ol>
 				<div id="portflioBar" class="bar stutas-1">
 					<div class="bar-inner"></div>
 				</div>
 			</nav>
-		<script>
-			portflio1.onclick=function(){
-				portflioBar.className="bar stutas-1"
-			}
-			portflio2.onclick=function(){
-				portflioBar.className="bar stutas-2"
-			}
-			portflio3.onclick=function(){
-				portflioBar.className="bar stutas-3"
-			}
-		</script>
-		<div class="works">
-			<div class="big">
-				<img src="./img/big.jpg" alt="works-1">
+			<script>
+				portflio1.onclick = function () {
+					portflioBar.className = "bar stutas-1"
+				}
+				portflio2.onclick = function () {
+					portflioBar.className = "bar stutas-2"
+				}
+				portflio3.onclick = function () {
+					portflioBar.className = "bar stutas-3"
+				}
+			</script>
+			<div class="works">
+				<div class="big">
+					<img src="./img/big.jpg" alt="works-1">
+				</div>
+				<div class="small" style="top:0px; left:644px">
+					<img src="./img/small1.jpg" alt="works-2">
+				</div>
+				<div class="small" style="top:298px;left:644px">
+					<img src="./img/small2.jpg" alt="works-3">
+				</div>
 			</div>
-			<div class="small" style="top:0px; left:644px">
-				<img src="./img/small1.jpg" alt="works-2">
-			</div>
-			<div class="small"style="top:298px;left:644px">
-				<img src="./img/small2.jpg" alt="works-3">
-			</div>
-		</div>
 		</section>
 		<script>
-			setTimeout(function(){
+			setTimeout(function () {
 				siteWelcome.classList.remove('active')
-			},3000)
-			window.onscroll = function(xxx){
-				if(window.scrollY > 0){
+			}, 3000)
+			window.onscroll = function (xxx) {
+				if (window.scrollY > 0) {
 					topNavBar.classList.add('sticky')
-				}else{
+				} else {
 					topNavBar.classList.remove('sticky')
 				}
 			}
-			let aTags = document.getElementsByClassName('menuTrigger')
-			for(let i=0; 1<aTags.length; i++){
-				aTags[i].onmouseenter = function(x){
-					let a = x.currentTarget
-					let brother = a.nextSibling
-					while(brother.nodeType === 3){
-						brother = brother.nextSibling
-					}
-					console.log(brother)
+			let liTags = document.querySelectorAll('nav.menu > ul > li')
+			for (let i = 0; 1 < liTags.length; i++) {
+				liTags[i].onmouseenter = function (x) {
+					x.currentTarget.classList.add('active')
 				}
-			aTags[i].onmouseleave = function(){
-				console.log('mouseleave')
+				liTags[i].onmouseleave = function (x) {
+					x.currentTarget.classList.remove('active')
+				}
 			}
+
+			let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+			for (let i = 0; i < aTags.length; i++) {
+				aTags[i].onclick = function (x) {
+					x.preventDefault()
+					let a = x.currentTarget
+					let href = a.getAttribute('href') //'#siteWorks'
+					let element = document.querySelector(href)
+					let top = element.offsetTop
+					window.scrollTo(0,top - 80)
+
+				}
 			}
 		</script>
 	</body>
+
 	</html>

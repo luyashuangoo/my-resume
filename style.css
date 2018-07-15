@@ -4,24 +4,21 @@ body { background-color: rgb(239,239,239); color: black; }
 .topNavBar-inner { padding: 0 16px 0 16px; }
 .topNavBar a { float: left; color: inherit; text-decoration: none; }
 .topNavBar nav ul { list-style: none; margin: 0; padding: 10px; } 
-.topNavBar nav ul li { float: right; color: inherit; margin-left: 11px; margin-right: 11px;position: relative; }
+.topNavBar nav ul li { float: right; color: inherit; margin-left: 11px; margin-right: 11px;position: relative;cursor: pointer; }
 .topNavBar nav ul li a { color: inherit; font-weight: bold; font-size: 18 px; border-bottom: 3px solid transparent;
   padding-top: 6px; padding-bottom: 6px; display: block; }
-.topNavBar nav ul li a:hover::after{ content:''; display: block; position: absolute; top:100%; left:0; width:100%; 
-  height: 3px; background-color: #e8676b; animation: menuSlide .3s; }
-@keyframes menuSlide{
+.topNavBar > nav > ul > li.active > a::after{ content:''; display: block; position: absolute; top:100%; left:0; width:100%; 
+  height: 20px; background-color: #e8676b; animation: a .3s;}
+@keyframes a{
   0%{ width:0; }
   100%{ width:100%; }
 }
-.topNavBar .submenu{
-  display: none;
-  position: absolute;
-  left:-21px;
-  top:100%;
-  white-space: nowrap;
-}
-.topNavBar .submenu.active{
-  display: block;
+.topNavBar li .submenu{ display: none; position: absolute; right:0; top:100%; white-space: nowrap;
+  background: white; color: #3d4451; padding: 10px 5px; box-shadow: 0px 0px 5px 0.5px rgba(194,194,194,0.73); }
+.topNavBar li.active > .submenu{ display: block; animation: menu .3s;}
+@keyframes menu{
+  0%{margin-right:100%}
+  100%{margin-right:0%}
 }
 /*{ border-bottom: 3px solid rgb(232, 103, 107); }*/
 .clearfix::after { content: ""; display: block; clear: both; }
@@ -56,7 +53,7 @@ body main{ margin-top: -340px; }
 .downloadResume-wrapper{ text-align: center; margin: 25px 0px 25px 0px; }
 .downloadResume-wrapper .downloadResume{ text-decoration: none; border: 1px solid rgb(203, 205, 207); color: #3d4451; 
   display: inline-block; padding: 18px 50px; border-radius: 5px; font-weight: bold; letter-spacing: 1px; transition：box-shadow 1s; }
-.downloadResume-wrapper .downloadResume:hover{ box-shadow: 0.5px 2px 9px 2px rgba(194,194,194,0.73); }
+.downloadResume-wrapper a:hover{ box-shadow: 0.5px 2px 9px 2px rgba(194,194,194,0.73); }
 main .selfIntroduction{ max-width: 940px; margin-left: auto; margin-right: auto;
   text-align: center; font-family: tahoma, arial, "Hiragino Sans GB", 宋体, sans-serif; line-height: 18px; line-height: 36px; font-size: 18px; }
 section.skills{ max-width: 940px; margin-left: auto; margin-right: auto; text-align: center; }
