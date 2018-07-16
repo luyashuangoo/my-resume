@@ -85,7 +85,7 @@
 			<div class="banner mask"></div>
 		</div>
 		<main>
-			<div id="userCard" class="userCard">
+			<div data-x id="userCard" class="userCard">
 				<div class="pictureAndText clearfix">
 					<div class="picture">
 						<img src="./img/avatar.png" width="299px" height="322px" alt="头像">
@@ -141,7 +141,7 @@
 				为什么说这是一个友尽游戏呢？因为玩家经常会死于不明爆炸和突然被打掉的地板，而这些很多都是官方用心险恶的设计，然后被玩家在一通乱打中触发。通常都是冲在前面的人触发了陷阱害死了后面的人。我叫鲁亚霜，来自绵阳，一个渴望技术不断进步的女孩。除了美，就是学。
 			</p>
 		</main>
-		<section id="siteSkills" class="skills clearfix">
+		<section data-x id="siteSkills" class="skills clearfix">
 			<h2>技能</h2>
 			<ol class="skillsList clearfix">
 				<li>
@@ -182,7 +182,7 @@
 				</li>
 			</ol>
 		</section>
-		<section id="siteWorks" class="portflio">
+		<section data-x id="siteWorks" class="portflio">
 			<h2>作品集</h2>
 			<nav class="portflioCate">
 				<ol class="clearfix">
@@ -218,18 +218,35 @@
 				</div>
 			</div>
 		</section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 		<script>
 			setTimeout(function () {
 				siteWelcome.classList.remove('active')
 			}, 1000)
-			window.onscroll = function (xxx) {
+			window.onscroll = function (x) {
 				if (window.scrollY > 0) {
 					topNavBar.classList.add('sticky')
 				} else {
 					topNavBar.classList.remove('sticky')
 				}
 			}
-			
+
+			console.log('获得的Y' + window.scrollY)
+
+			let specialTags = document.querySelectorAll('[data-x]')
+			let minIndex = 0
+			for (let i = 0; i < specialTags.length; i++) {
+				if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+					minIndex = i
+				}
+				for (let i = 0; i < specialTags.length; i++) {
+					specialTags[i].classList.remove('active')
+				}
+				specialTags[minIndex].classList.add('active')
+				let id = specialTags[minIndex].id
+				console.log(id)
+			}
+
 			let liTags = document.querySelectorAll('nav.menu > ul > li')
 			for (let i = 0; i < liTags.length; i++) {
 				liTags[i].onmouseenter = function (x) {
@@ -241,17 +258,36 @@
 			}
 
 			let aTags = document.querySelectorAll('nav.menu > ul > li > a')
-			console.log(aTags)
+			function animate(time) {
+				requestAnimationFrame(animate);
+				TWEEN.update(time);
+			}
+			requestAnimationFrame(animate);
+
 			for (let i = 0; i < aTags.length; i++) {
 				aTags[i].onclick = function (x) {
 					x.preventDefault()
 					let a = x.currentTarget
 					let href = a.getAttribute('href') //'#siteAbout'
 					let element = document.querySelector(href)
+					console.log(element)
 					let top = element.offsetTop
-					window.scrollTo(0, top)
+
+					var currentTop = window.scrollY
+					var targetTop = top - 80
+					var s = targetTop - currentTop
+					var coords = { y: currentTop };
+					var t = Math.abs((s / 100) * 300)
+					if (t > 500) { t = 500 }
+					var tween = new TWEEN.Tween(coords)
+						.to({ y: targetTop }, t)
+						.easing(TWEEN.Easing.Quadratic.InOut)
+						.onUpdate(function () {
+							window.scrollTo(0, coords.y);
+						})
+						.start();
 				}
-			}
+			} 
 		</script>
 	</body>
 
